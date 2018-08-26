@@ -25,7 +25,7 @@ SECRET_KEY = '5x&_9u#988(n%bddor!)h!u16tgvgf_=483pj%^ro7c8#i+ub_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['35.185.61.102' ]
+ALLOWED_HOSTS = ['35.185.61.102', '127.0.0.1']
 
 
 # Application definition
@@ -76,10 +76,22 @@ LOGOUT_REDIRECT_URL = 'home'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'OPTIONS': { 'read_default_file': '/etc/mysql/dbAccess', },
+#         }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': { 'read_default_file': '/etc/mysql/dbAccess',},
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '35.185.61.102',
+            'PORT': '3306',
+            'NAME': 'agri_data',
+            'USER': 'remote',
+            'PASSWORD': 'safe_passworD123!',
         }
 }
 
