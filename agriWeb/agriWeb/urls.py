@@ -14,15 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.conf.urls import include
+from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path
 from django.views.generic.base import TemplateView
+from agriApp import views
+from .views import about, saveCust, success
 
 urlpatterns = [
+    url(r'^about$', about, name='about'),
+    url(r'^savecust/success', success, name='success'),
+    url(r'^savecust/$', saveCust.as_view(), name='saveCust'),
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('agriApp/', include('agriApp.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('^agriweb/addcustomer', views.cust, name='cust'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

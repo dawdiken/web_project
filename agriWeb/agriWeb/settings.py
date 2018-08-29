@@ -84,6 +84,17 @@ LOGOUT_REDIRECT_URL = 'home'
 # }
 
 
+# DATABASES = {
+#     'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'HOST': '35.185.61.102',
+#             'PORT': '3306',
+#             'NAME': 'agri_data',
+#             'USER': 'remote',
+#             'PASSWORD': 'safe_passworD123!',
+#         }
+# }
+
 DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -94,6 +105,7 @@ DATABASES = {
             'PASSWORD': 'safe_passworD123!',
         }
 }
+
 
 
 # Password validation
