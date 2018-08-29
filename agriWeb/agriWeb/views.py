@@ -9,8 +9,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 
 
-def about(request, *args, **kwargs):
-    return render(request, 'about.html')
+def addCustomer(request, *args, **kwargs):
+    return render(request, 'addCust.html')
 
 
 def success(request, *args, **kwargs):

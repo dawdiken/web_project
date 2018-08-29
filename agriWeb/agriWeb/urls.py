@@ -20,10 +20,10 @@ from django.conf import settings
 from django.urls import path
 from django.views.generic.base import TemplateView
 from agriApp import views
-from .views import about, saveCust, success
+from .views import addCustomer, saveCust, success
 
 urlpatterns = [
-    url(r'^about$', about, name='about'),
+    url(r'^addcustomer/$', addCustomer, name='addCustomer$'),
     url(r'^savecust/success', success, name='success'),
     url(r'^savecust/$', saveCust.as_view(), name='saveCust'),
     path('admin/', admin.site.urls),
