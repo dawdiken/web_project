@@ -24,6 +24,19 @@ class saveCust(View):
         #     return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
         # if not request.user.email.endswith('@gmail.com'):
         #     return redirect('/permissionredirect')
+
+        cnx = pymysql.connect(host="35.185.61.102",  # your host, usually localhost
+                              user="remote",  # your username
+                              passwd="safe_passworD123!",  # your password
+                              db="agri_data")  # name of the data base
+        cursor = cnx.cursor()
+        query = ("SELECT * FROM customer")
+        cursor.execute(query)
+        results = cursor.fetchall()
+        print(results)
+
+
+        print(request)
         print("did you fucking work")
         return redirect('success')
 
