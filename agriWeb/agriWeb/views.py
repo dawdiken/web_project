@@ -31,17 +31,15 @@ class saveCust(View):
                               db="agri_data")  # name of the data base
         cursor = cnx.cursor()
         #query = ("SELECT * FROM customer")
-        sql = "INSERT INTO customer (name, address) VALUES (%s, %s)"
+        sql = "INSERT INTO customer (id, address) VALUES (%s, %s)"
         val = ("John", "Highway 21")
-
-
         cursor.execute(sql, val)
-
+        cnx.commit()
 
         # results = cursor.fetchall()
         # print(results)
 
-
+        cnx.close()
         print(request)
         print("did you fucking work")
         return redirect('success')
