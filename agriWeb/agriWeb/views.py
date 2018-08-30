@@ -25,6 +25,12 @@ class saveCust(View):
         # if not request.user.email.endswith('@gmail.com'):
         #     return redirect('/permissionredirect')
 
+        name = request.GET['fname']
+        lname = request.GET['Email']
+        print("GET")
+        print(name)
+        print(lname)
+        print("GET")
         cnx = pymysql.connect(host="35.185.61.102",  # your host, usually localhost
                               user="remote",  # your username
                               passwd="safe_passworD123!",  # your password
