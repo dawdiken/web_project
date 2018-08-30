@@ -30,10 +30,16 @@ class saveCust(View):
                               passwd="safe_passworD123!",  # your password
                               db="agri_data")  # name of the data base
         cursor = cnx.cursor()
-        query = ("SELECT * FROM customer")
-        cursor.execute(query)
-        results = cursor.fetchall()
-        print(results)
+        #query = ("SELECT * FROM customer")
+        sql = "INSERT INTO customer (name, address) VALUES (%s, %s)"
+        val = ("John", "Highway 21")
+
+
+        cursor.execute(sql, val)
+
+
+        # results = cursor.fetchall()
+        # print(results)
 
 
         print(request)
